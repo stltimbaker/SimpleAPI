@@ -46,7 +46,10 @@ pipeline {
                 echo "Creating Artifacts..."
 
                 bat "dir"
-                bat "cd SimpleAPI\\bin\\Debug\\net6.0"
+                bat "cd SimpleAPI"
+                bat "cd bin"
+                bat "cd Debug"
+                bat "cd net6.0"
                 bat "dir"
 
                 echo "Artifacts Created!"
