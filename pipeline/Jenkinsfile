@@ -55,7 +55,7 @@ pipeline {
                 echo '${WORKSPACE}'
 
                 //bat "dir"
-                bat 'cd SimpleAPI'
+                bat cd SimpleAPI
                 // bat "dir"
                 bat "cd bin"
                 // bat "dir"
