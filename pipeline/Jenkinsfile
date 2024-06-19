@@ -56,9 +56,9 @@ pipeline {
 
                 bat "dir"
 
-                sh '''
-                     pwd
-                  '''
+                dir('./SimpleAPI') {
+
+                }
                 
                 bat "dir"
                 //bat "cd bin"
