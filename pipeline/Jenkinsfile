@@ -55,8 +55,12 @@ pipeline {
                 echo "Workspace: ${WORKSPACE}"
 
                 bat "dir"
+
+                sh '''
+                     cd SimpleAPI
+                  '''
                 
-                // bat "dir"
+                bat "dir"
                 //bat "cd bin"
                 // bat "dir"
                 //bat "cd Debug"
