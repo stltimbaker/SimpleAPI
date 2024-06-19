@@ -32,8 +32,7 @@ pipeline {
                 pwd
                 ls 
                 cd SimpleAPI
-                ls
-                """
+                ls """
                 echo "Build Finished!"
             }
         }
