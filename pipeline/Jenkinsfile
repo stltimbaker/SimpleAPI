@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    environment {
+        MY_VARIABLE = 'This is Tims Variable'
+    }
+    
+    stages {
+        stage('First') {
+            environment {
+                STAGE_1_VARIABLE = 'Hello Stage 1!'
+            }
+            parallel {
+                stage('step-1') {
+                    steps {
+                        echo "In stage First, step-1"
+                    }
+                }
+                stage('step-2') {
+                    steps {
+                        echo "In stage First, step-2"
+                    }
+                }
+            }
+        }
+        stage('Second') {
+            steps {
+                echo "Hey, I'm in the Second stage!"
+            }
+        }
+    }
+}
