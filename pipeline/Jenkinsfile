@@ -57,7 +57,7 @@ pipeline {
                 bat "dir"
 
                 sh '''
-                     cd SimpleAPI
+                     pwd
                   '''
                 
                 bat "dir"
