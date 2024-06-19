@@ -5,14 +5,17 @@ pipeline {
     }
     
     stages {
-        stage('First') {
+        stage('Intro') {
             environment {
                 STAGE_1_VARIABLE = 'Hello Stage 1!'
             }
             parallel {
                 stage('step-1') {
                     steps {
-                        echo "In stage First, step-1"
+                        echo "dotNet Info" 
+                        echo "==========="
+                        bat 'dotnet --version'
+                        bat 'dotnet --list-sdks'
                     }
                 }
                 stage('step-2') {
@@ -30,7 +33,7 @@ pipeline {
                 ls 
                 cd SimpleAPI
                 ls
-                dotnet build """
+                """
                 echo "Build Finished!"
             }
         }
