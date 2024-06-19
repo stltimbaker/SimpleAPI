@@ -57,7 +57,7 @@ pipeline {
                 //bat "dir"
 
                 bat "dotnet publish -o=${DEPLOY_PATH}"
-                archiveArtifacts("${DEPLOY_PATH}")
+                archiveArtifacts('Deploy/')
 
                 bat "dir"
 
