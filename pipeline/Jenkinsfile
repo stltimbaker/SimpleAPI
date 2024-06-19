@@ -51,20 +51,17 @@ pipeline {
             steps {
                 echo "Creating Artifacts..."
 
-                echo '${DEPLOY_PATH}' 
-                echo '${WORKSPACE}'
+                echo "Deploy Path: ${DEPLOY_PATH}" 
+                echo "Workspace: ${WORKSPACE}"
 
-                //bat "dir"
-                script {
-                    cd SimpleAPI
-                }
+                bat "dir"
                 
                 // bat "dir"
-                bat "cd bin"
+                //bat "cd bin"
                 // bat "dir"
-                bat "cd Debug"
+                //bat "cd Debug"
                 // bat "dir"
-                bat "cd net6.0"
+                //bat "cd net6.0"
                 //bat 'dir'
 
                 echo "Artifacts Created!"
