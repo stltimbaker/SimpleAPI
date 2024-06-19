@@ -22,12 +22,16 @@ pipeline {
                 }
             }
         }
-        stage('Second') {
+        stage('Buile') {
             steps {
-                echo "Hey, I'm in the Second stage!"
+                echo "Build Starting..."
                 sh """
                 pwd
-                ls """
+                ls 
+                cd SimpleAPI
+                ls
+                dotnet build """
+                echo "Build Finished!"
             }
         }
     }
