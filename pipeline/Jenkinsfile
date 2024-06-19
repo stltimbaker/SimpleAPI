@@ -39,7 +39,7 @@ pipeline {
                 bat "cd SimpleAPI"
                 bat "dir"
 
-                bat "dotnet build"
+                bat "dotnet build -o=${DEPLOY_PATH}"
 
                 bat "dir"
 
