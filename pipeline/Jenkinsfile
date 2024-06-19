@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'MSBUILD22' }
     environment {
         MY_VARIABLE = 'This is Tims Variable'
     }
@@ -22,7 +22,7 @@ pipeline {
                 }
             }
         }
-        stage('Buile') {
+        stage('Build') {
             steps {
                 echo "Build Starting..."
                 sh """
