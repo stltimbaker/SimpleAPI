@@ -25,8 +25,9 @@ pipeline {
         stage('Second') {
             steps {
                 echo "Hey, I'm in the Second stage!"
+                sh """
                 pwd
-                ls
+                ls """
             }
         }
     }
