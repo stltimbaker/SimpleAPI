@@ -41,7 +41,7 @@ pipeline {
                 // bat "cd SimpleAPI"
                 // bat "dir"
 
-                bat "dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" -o=${DEPLOY_PATH}"
+                sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" -o=${DEPLOY_PATH}'
 
                 // bat "dir"
 
