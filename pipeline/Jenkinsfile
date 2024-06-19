@@ -28,11 +28,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Build Starting..."
-                sh """
-                pwd
-                ls 
-                cd SimpleAPI
-                ls """
+
+                bat "ls"
+                bat "cd SimpleAPI"
+                bat "ls"
+                
                 echo "Build Finished!"
             }
         }
