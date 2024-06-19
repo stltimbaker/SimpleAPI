@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'MSBUILD22' }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '05'))
+    }
     environment {
         MY_VARIABLE = 'This is Tims Variable'
     }
