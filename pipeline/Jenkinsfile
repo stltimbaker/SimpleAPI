@@ -63,7 +63,7 @@ pipeline {
 
                 zip zipFile: "Tim.zip", archive: false, dir:"${DEPLOY_PATH}"
                 echo "Zip worked"
-                archiveArtifacts artifacts: "Tim.zip", fingerprint: true 
+                //archiveArtifacts artifacts: "Tim.zip", fingerprint: true 
 
                 bat "dir"
 
