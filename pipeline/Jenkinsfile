@@ -56,11 +56,11 @@ pipeline {
 
                 //bat "dir"
 
-                zip zipFile: "Tim.zip", archive: false, dir: "${DEPLOY_PATH}"
+                zip zipFile: "Tim.zip", archive: true, dir: "${DEPLOY_PATH}"
 
                 bat "dotnet publish -o=${DEPLOY_PATH}"
-                //archiveArtifacts('Deploy/')
-                archiveArtifacts('Tim.zip')
+                archiveArtifacts('Deploy/')
+                //archiveArtifacts('Tim.zip')
 
                 bat "dir"
 
