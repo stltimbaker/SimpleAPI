@@ -35,6 +35,8 @@ pipeline {
 
                 bat "dotnet build"
 
+                bat "dir"
+
                 echo "Build Finished!"
             }
         }
