@@ -58,7 +58,7 @@ pipeline {
 
                 //bat "dir"
 
-                bat "dotnet publish -p:VersionPrefix=${VERSION} --version-suffix ${VERSION_SUFFIX} -o=${DEPLOY_PATH}"
+                bat "dotnet publish -p:VersionPrefix=${VERSION} --version-suffix ${VERSION_SUFFIX}"
                 zip zipFile: "Tim.zip", archive: true, dir: "${DEPLOY_PATH}"
                 archiveArtifacts('Deploy/')
 
