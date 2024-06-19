@@ -33,6 +33,8 @@ pipeline {
                 bat "cd SimpleAPI"
                 bat "dir"
 
+                bat "dotnet build"
+
                 echo "Build Finished!"
             }
         }
