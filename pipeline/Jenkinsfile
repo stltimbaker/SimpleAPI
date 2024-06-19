@@ -5,12 +5,15 @@ pipeline {
     }
     environment {
         MY_VARIABLE = 'This is Tims Variable'
+
+        DEPLOY_PATH = "${WORKSPACE}\\Deploy\\"
     }
     
     stages {
         stage('Intro') {
             environment {
                 STAGE_1_VARIABLE = 'Hello Stage 1!'
+
             }
             parallel {
                 stage('step-1') {
@@ -47,6 +50,9 @@ pipeline {
         stage('Artifacts') {
             steps {
                 echo "Creating Artifacts..."
+
+                echo '${DEPLOY_PATH}' 
+                echo '${WORKSPACE}'
 
                 //bat "dir"
                 bat 'cd SimpleAPI'
