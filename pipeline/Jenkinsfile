@@ -41,7 +41,7 @@ pipeline {
                 // bat "cd SimpleAPI"
                 // bat "dir"
 
-                bat 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" -o=${DEPLOY_PATH}'
+                bat "dotnet build -p:VersionPrefix=${VERSION} --version-suffix ${VERSION_SUFFIX} -o=${DEPLOY_PATH}"
 
                 // bat "dir"
 
@@ -58,9 +58,9 @@ pipeline {
 
                 //bat "dir"
 
-                //bat "dotnet publish -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_SUFFIX}" -o=${DEPLOY_PATH}"
-                //zip zipFile: "Tim.zip", archive: true, dir: "${DEPLOY_PATH}"
-                //archiveArtifacts('Deploy/')
+                bat "dotnet publish -p:VersionPrefix=${VERSION} --version-suffix ${VERSION_SUFFIX} -o=${DEPLOY_PATH}"
+                zip zipFile: "Tim.zip", archive: true, dir: "${DEPLOY_PATH}"
+                archiveArtifacts('Deploy/')
 
                 bat "dir"
 
