@@ -29,10 +29,10 @@ pipeline {
             steps {
                 echo "Build Starting..."
 
-                bat "ls"
+                bat "dir"
                 bat "cd SimpleAPI"
-                bat "ls"
-                
+                bat "dir"
+
                 echo "Build Finished!"
             }
         }
