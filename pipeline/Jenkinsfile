@@ -1,5 +1,6 @@
 library identifier: 'SimpleAPI_Shared@main',
-retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/stltimbaker/SimpleAPI_Shared.git'])
+retriever: modernSCM([$class: 'GitSCMSource', 
+remote: 'https://github.com/stltimbaker/SimpleAPI_Shared.git'])
 
 pipeline {
     agent { label 'MSBUILD22' }
@@ -20,7 +21,7 @@ pipeline {
     stages {
         stage('Tool Info') {
             steps {
-                logMessage("derp")
+                logMessage()
                 auditTools()
                 bat 'echo Path:' 
                 bat 'echo %PATH%'
