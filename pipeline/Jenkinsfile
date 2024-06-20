@@ -14,13 +14,7 @@ pipeline {
     stages {
         stage('Tool Info') {
             steps {
-                //auditTools()
-                sh '''
-                git version
-                docker version
-                dotnet --list-sdks
-                dotnet --list-runtimes 
-    '''
+                auditTools()
             }
         }
         stage('Build') {
@@ -64,12 +58,10 @@ pipeline {
 }
 
 void auditTools() {
-    sh '''
-        git version
-        docker version
-        dotnet --list-sdks
-        dotnet --list-runtimes 
-    '''
+    bat "git version"
+    bat "dotnet --list-sdks"
+    bat "docker version"
+    bat "dotnet --list-runtimes "
 }
 
 // String getVersionNumber() {
