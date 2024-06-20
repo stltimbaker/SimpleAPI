@@ -4,7 +4,8 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '05'))
     }
     environment {
-        VERSION = getVersionNumber()
+        //VERSION = getVersionNumber()
+        VERSION = '0.0.1'
         VERSION_SUFFIX = '3'
 
         DEPLOY_PATH = "${WORKSPACE}\\Deploy\\"
