@@ -23,6 +23,7 @@ pipeline {
             steps {
                 logMessage()
                 logMessage message:'Derp'
+                logMessage 'Hey Hey Hey' 
                 auditTools()
                 bat 'echo Path:' 
                 bat 'echo %PATH%'
