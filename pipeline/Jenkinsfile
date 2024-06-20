@@ -65,6 +65,6 @@ void auditTools() {
     '''
 }
 
-string getVersionNumber() {
+String getVersionNumber() {
     return "0.1.7"
 }
