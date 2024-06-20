@@ -16,7 +16,7 @@ pipeline {
             steps {
                 auditTools()
                 sh '''
-                    git version
+                    git --version
                 '''
             }
         }
