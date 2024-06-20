@@ -4,33 +4,16 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '05'))
     }
     environment {
-        MY_VARIABLE = 'This is Tims Variable'
-        VERSION = '0.0.1'
+        VERSION = getVersionNumber()
         VERSION_SUFFIX = '3'
 
         DEPLOY_PATH = "${WORKSPACE}\\Deploy\\"
     }
     
     stages {
-        stage('Intro') {
-            environment {
-                STAGE_1_VARIABLE = 'Hello Stage 1!'
-
-            }
-            parallel {
-                stage('step-1') {
-                    steps {
-                        echo "dotNet Info" 
-                        echo "==========="
-                        bat 'dotnet --version'
-                        bat 'dotnet --list-sdks'
-                    }
-                }
-                stage('step-2') {
-                    steps {
-                        echo "In stage First, step-2"
-                    }
-                }
+        stage('Tool Info') {
+            steps {
+                auditTools()
             }
         }
         stage('Build') {
@@ -71,4 +54,17 @@ pipeline {
             }
         }
     }
+}
+
+void auditTools() {
+    sh '''
+        git version
+        docker version
+        dotnet --list-sdks
+        dotnet --list-runtimes 
+    '''
+}
+
+string getVersionNumber() {
+    return "0.1.7"
 }
