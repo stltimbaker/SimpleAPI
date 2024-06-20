@@ -60,7 +60,7 @@ pipeline {
 void auditTools() {
     bat "git version"
     bat "dotnet --list-sdks"
-    bat "docker version"
+    //bat "docker version"
     bat "dotnet --list-runtimes "
 }
 
