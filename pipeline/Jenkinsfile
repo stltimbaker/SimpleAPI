@@ -15,6 +15,9 @@ pipeline {
         stage('Tool Info') {
             steps {
                 auditTools()
+                sh '''
+                    git version
+                '''
             }
         }
         stage('Build') {
@@ -58,7 +61,7 @@ pipeline {
 }
 
 void auditTools() {
-    bat "git version"
+    //bat "git version"
     bat "dotnet --list-sdks"
     //bat "docker version"
     bat "dotnet --list-runtimes "
