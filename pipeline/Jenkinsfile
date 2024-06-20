@@ -15,7 +15,10 @@ pipeline {
         stage('Tool Info') {
             steps {
                 auditTools()
+                bat 'echo Path:' 
                 bat 'echo %PATH%'
+                bat 'echo Path2:'
+                bat 'echo env.PATH'
             }
         }
         stage('Build') {
