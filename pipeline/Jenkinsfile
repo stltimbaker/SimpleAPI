@@ -22,6 +22,7 @@ pipeline {
         stage('Tool Info') {
             steps {
                 logMessage()
+                logMessage message:'Derp'
                 auditTools()
                 bat 'echo Path:' 
                 bat 'echo %PATH%'
