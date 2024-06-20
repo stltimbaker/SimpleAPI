@@ -15,9 +15,9 @@ pipeline {
         stage('Tool Info') {
             steps {
                 auditTools()
-                sh '''
-                    git --version
-                '''
+                sh """
+                    git version
+                """
             }
         }
         stage('Build') {
