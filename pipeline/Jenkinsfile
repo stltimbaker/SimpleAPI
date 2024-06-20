@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'MSBUILD22' }
+    parameters {
+        booleanParam(name: 'BuildType', defaultValue: false, description: 'Build Type?')
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '05'))
     }
@@ -69,5 +72,9 @@ void auditTools() {
 }
 
 String getVersionNumber() {
-    return "0.1.7"
+    if (params.BuildType) {
+        return "1.2.3"
+    } else {
+        return "0.1.7"
+    }
 }
