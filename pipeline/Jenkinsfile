@@ -7,9 +7,9 @@ pipeline {
     parameters {
         booleanParam(name: 'BuildType', defaultValue: false, description: 'Build Type?')
     }
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '05'))
-    }
+    // options {
+    //     buildDiscarder(logRotator(numToKeepStr: '05'))
+    // }
     environment {
         VERSION = getVersionNumber()
         //VERSION = '0.0.1'
@@ -20,9 +20,21 @@ pipeline {
     
     stages {
         stage ('Fortify') {
-            agent any
+            agent {
+                docker {
+                    label 'docker'
+                    image 'nexus2.prod.cloud.fedex.com:8444/fdx/jenkins/fortify-image'
+                    reuseNode true
+                }
+            }
             steps {
-                getFortifyScripts() 
+                script {
+                    unstash 'projectfolder'
+                    getFortifyScripts() 
+                    sh ''' ls -al
+                    ./translateTwo.sh -p 3538962_FedEx_Speed_Connect -v dev -t none -r RUN
+                    '''
+                } 
             }
         }
         stage('Tool Info') {
